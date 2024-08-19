@@ -8,13 +8,13 @@ import com.example.note_app.ui.RedOrange
 import com.example.note_app.ui.RedPink
 import com.example.note_app.ui.Violet
 
-@Entity
+@Entity(tableName = "note")
 data class Note(
     val title: String,
     val content: String,
     val timeStamp: Long,
     val color: Int,
-    @PrimaryKey val id: Int? = null
+    @PrimaryKey(autoGenerate = true) val id: Int? = null
 ) {
     companion object{
        val noteColors = listOf(RedOrange, LightGreen, Violet, BabyBlue, RedPink)
